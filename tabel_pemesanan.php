@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,11 +21,11 @@
             </div>
             <div class="form-group">
                 <label for="telepon">Telepon:</label>
-                <input type="text" class="form-control" id="telepon" name="telepon" required>
+                <input type="text" class="form-control" id="telepon" name="no_hp" required>
             </div>
             <div class="form-group">
                 <label for="jenis_laundry">Jenis Laundry:</label>
-                <select class="form-control" id="jenis_laundry" name="jenis_laundry" required>
+                <select class="form-control" id="jenis_laundry" name="jenis_cucian" required>
                     <option value="cuci_kering">Cuci Kering</option>
                     <option value="cuci_setrika">Cuci Setrika</option>
                     <option value="setrika_saja">Setrika Saja</option>

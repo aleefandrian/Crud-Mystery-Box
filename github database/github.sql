@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Jan 07, 2025 at 07:11 AM
+-- Generation Time: Jan 07, 2025 at 09:07 AM
 -- Server version: 8.0.30
 -- PHP Version: 8.1.10
 
@@ -65,13 +65,24 @@ CREATE TABLE `data_keuangan` (
 
 CREATE TABLE `data_laundry` (
   `id_laundry` int NOT NULL,
-  `nama` varchar(200) NOT NULL,
-  `jenis cucian` varchar(200) NOT NULL,
+  `id_akun` varchar(200) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `jenis_cucian` varchar(200) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `no_hp` varchar(255) NOT NULL,
   `berat` float NOT NULL,
-  `tanggal_masuk` date NOT NULL,
-  `tanggal_selsai` date NOT NULL,
-  `status` varchar(200) NOT NULL
+  `status` varchar(200) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL DEFAULT 'Belum Selesai'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `data_laundry`
+--
+
+INSERT INTO `data_laundry` (`id_laundry`, `id_akun`, `jenis_cucian`, `no_hp`, `berat`, `status`) VALUES
+(1, '1', 'cuci_setrika', '0', 7, 'Belum Selesai'),
+(2, '1', 'cuci_setrika', '818278238', 8, 'Belum Selesai'),
+(3, '1', 'cuci_setrika', '818278238', 3, 'Belum Selesai'),
+(4, '1', 'cuci_kering', '9878667', 2, 'Belum Selesai'),
+(5, '1', 'setrika_saja', '921982', 100, 'Belum Selesai'),
+(6, '1', 'cuci_setrika', '00189239', 129319, 'Belum Selesai');
 
 --
 -- Indexes for dumped tables
@@ -93,7 +104,8 @@ ALTER TABLE `data_keuangan`
 -- Indexes for table `data_laundry`
 --
 ALTER TABLE `data_laundry`
-  ADD PRIMARY KEY (`id_laundry`);
+  ADD PRIMARY KEY (`id_laundry`),
+  ADD KEY `id_akun` (`id_akun`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -115,7 +127,7 @@ ALTER TABLE `data_keuangan`
 -- AUTO_INCREMENT for table `data_laundry`
 --
 ALTER TABLE `data_laundry`
-  MODIFY `id_laundry` int NOT NULL AUTO_INCREMENT;
+  MODIFY `id_laundry` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
