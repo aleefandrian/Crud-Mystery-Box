@@ -1,3 +1,11 @@
+<?php
+require "koneksi.php";
+if (!isset($_SESSION['id_akun'])) {
+    $_SESSION['error'] = "Anda harus login terlebih dahulu.";
+    header("Location: login.blade.php");
+    exit;
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
