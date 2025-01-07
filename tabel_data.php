@@ -36,39 +36,45 @@
 </head>
 
 <body>
+<?php
+include('koneksi.php');
+
+// Mengambil data user dari tabel akun
+$query = "SELECT nama,jenis_cucian,berat,status FROM data_laundry";
+$result = mysqli_query($conn, $query);
+
+if (!$result) {
+    die("Query Error: " . mysqli_error($conn));
+}
+?>
+
+
     <h1>Data Laundry</h1>
-    <table>
+    <table border="1">
         <thead>
             <tr>
                 <th>No</th>
                 <th>Nama Pelanggan</th>
                 <th>Jenis Cucian</th>
                 <th>Berat (kg)</th>
-                <th>Tanggal Masuk</th>
-                <th>Tanggal Selesai</th>
                 <th>Status</th>
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>1</td>
-                <td>John Doe</td>
-                <td>Pakaian</td>
-                <td>5</td>
-                <td>2023-10-01</td>
-                <td>2023-10-03</td>
-                <td>Selesai</td>
-            </tr>
-            <tr>
-                <td>2</td>
-                <td>Jane Smith</td>
-                <td>Selimut</td>
-                <td>3</td>
-                <td>2023-10-02</td>
-                <td>2023-10-04</td>
-                <td>Proses</td>
-            </tr>
-            <!-- Tambahkan data lainnya di sini -->
+        <?php
+    $no = 1; // Counter for serial number
+    while ($row = mysqli_fetch_assoc($result)) { ?>
+      <tr>
+        <td><?php echo $no++; ?></td>
+        <td><?php echo htmlspecialchars($row['nama']); ?></td>
+        <td><?php echo htmlspecialchars($row['jenis_cucian']); ?></td>
+        <td><?php echo intval($row['berat']); ?></td>
+        
+        <td><?php echo htmlspecialchars($row['status']); ?></td>
+      </tr>
+    <?php } ?>
+
+            
         </tbody>
     </table>
 </body>

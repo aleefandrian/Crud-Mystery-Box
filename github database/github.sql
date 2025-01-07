@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Jan 07, 2025 at 09:07 AM
+-- Generation Time: Jan 07, 2025 at 09:41 AM
 -- Server version: 8.0.30
 -- PHP Version: 8.1.10
 
@@ -69,20 +69,16 @@ CREATE TABLE `data_laundry` (
   `jenis_cucian` varchar(200) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   `no_hp` varchar(255) NOT NULL,
   `berat` float NOT NULL,
-  `status` varchar(200) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL DEFAULT 'Belum Selesai'
+  `status` varchar(200) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL DEFAULT 'Belum Selesai',
+  `nama` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `data_laundry`
 --
 
-INSERT INTO `data_laundry` (`id_laundry`, `id_akun`, `jenis_cucian`, `no_hp`, `berat`, `status`) VALUES
-(1, '1', 'cuci_setrika', '0', 7, 'Belum Selesai'),
-(2, '1', 'cuci_setrika', '818278238', 8, 'Belum Selesai'),
-(3, '1', 'cuci_setrika', '818278238', 3, 'Belum Selesai'),
-(4, '1', 'cuci_kering', '9878667', 2, 'Belum Selesai'),
-(5, '1', 'setrika_saja', '921982', 100, 'Belum Selesai'),
-(6, '1', 'cuci_setrika', '00189239', 129319, 'Belum Selesai');
+INSERT INTO `data_laundry` (`id_laundry`, `id_akun`, `jenis_cucian`, `no_hp`, `berat`, `status`, `nama`) VALUES
+(7, '1', 'cuci_setrika', '081285645075', 1, 'Belum Selesai', 'Resky Adriana Adha ');
 
 --
 -- Indexes for dumped tables
@@ -127,7 +123,7 @@ ALTER TABLE `data_keuangan`
 -- AUTO_INCREMENT for table `data_laundry`
 --
 ALTER TABLE `data_laundry`
-  MODIFY `id_laundry` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_laundry` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
