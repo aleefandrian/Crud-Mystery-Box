@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Jan 07, 2025 at 03:11 AM
+-- Generation Time: Jan 07, 2025 at 07:11 AM
 -- Server version: 8.0.30
 -- PHP Version: 8.1.10
 
@@ -29,9 +29,48 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `akun` (
   `id_akun` int NOT NULL,
-  `nama` mediumint NOT NULL,
-  `username` mediumint NOT NULL,
-  `password` varchar(255) NOT NULL
+  `nama` varchar(200) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `username` varchar(200) DEFAULT NULL,
+  `password` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `akun`
+--
+
+INSERT INTO `akun` (`id_akun`, `nama`, `username`, `password`) VALUES
+(1, 'erik', 'erik', 'erik123');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `data_keuangan`
+--
+
+CREATE TABLE `data_keuangan` (
+  `id_bayar` int NOT NULL,
+  `id_laundry` int DEFAULT NULL,
+  `waktu` date NOT NULL,
+  `deskripsi` longtext NOT NULL,
+  `pemasukan` bigint NOT NULL,
+  `pengeluaran` bigint NOT NULL,
+  `saldo` bigint NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `data_laundry`
+--
+
+CREATE TABLE `data_laundry` (
+  `id_laundry` int NOT NULL,
+  `nama` varchar(200) NOT NULL,
+  `jenis cucian` varchar(200) NOT NULL,
+  `berat` float NOT NULL,
+  `tanggal_masuk` date NOT NULL,
+  `tanggal_selsai` date NOT NULL,
+  `status` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
@@ -45,6 +84,18 @@ ALTER TABLE `akun`
   ADD PRIMARY KEY (`id_akun`);
 
 --
+-- Indexes for table `data_keuangan`
+--
+ALTER TABLE `data_keuangan`
+  ADD PRIMARY KEY (`id_bayar`);
+
+--
+-- Indexes for table `data_laundry`
+--
+ALTER TABLE `data_laundry`
+  ADD PRIMARY KEY (`id_laundry`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -52,7 +103,19 @@ ALTER TABLE `akun`
 -- AUTO_INCREMENT for table `akun`
 --
 ALTER TABLE `akun`
-  MODIFY `id_akun` int NOT NULL AUTO_INCREMENT;
+  MODIFY `id_akun` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `data_keuangan`
+--
+ALTER TABLE `data_keuangan`
+  MODIFY `id_bayar` int NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `data_laundry`
+--
+ALTER TABLE `data_laundry`
+  MODIFY `id_laundry` int NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
