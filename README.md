@@ -1,8 +1,10 @@
-Selamat datang di proyek yang iseng (LAUNDRY RAR).
+Selamat datang di proyek yang iseng (LAUNDRY RAWRRRR).
 
 Fitur Utama
 Fitur 1: Membantu mengelola keuangan usaha.
+
 Fitur 2: Membantu mengelola pemesanan usaha.
+
 Fitur 3: Udah itu aja.
 
 
