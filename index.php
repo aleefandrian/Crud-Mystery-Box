@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,18 +9,33 @@
 
     <style>
         .jumbotron {
-        background-color: #f8f9fa;
             height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
+            align-items: center;
+        }
+
+        /* membuat body tidak dapat di scroll */
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        .navbar-nav .nav-item .nav-link {
+            color: black;
         }
     </style>
 
 </head>
+
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-        <a class="navbar-brand" href="#">RAR Laundry</a>
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <a class="navbar-brand" href="#">
+            <img src="./image/logo.jpeg" width="50" height="50" class="d-inline-block align-top" alt="">
+        </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -37,11 +53,14 @@
                 <li class="nav-item">
                     <a class="nav-link" href="#">Kontak</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="logout.php">logout</a>
+                </li>
             </ul>
         </div>
     </nav>
 
-    <div class="jumbotron text-center">
+    <div class="jumbotron text-center" style="background-image: url('./image/laundry-2.jpeg'); background-size: cover; background-position: center; color: white;">
         <h1 class="display-4">Welcome to RAR Laundry</h1>
         <p class="lead">laundry yang cepat, mantap, dan tahan lama cuma 7RB per Kg aja lohh </p>
         <div class="d-flex justify-content-center">
@@ -55,4 +74,5 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
+
 </html>
