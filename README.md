@@ -1,4 +1,4 @@
-  <<<<<<< main
+
   Selamat datang di proyek yang iseng (LAUNDRY RAWRRRR).
 
   Fitur Utama
@@ -18,7 +18,3 @@
   Cara Menggunakan (Coba Aja, tinggal pencet" doang kok)
   Cukup tekan login dan buat akun proyek ini berjalan 
   Kalau gak bisa, coba cek apakah kamu sudah makan, karena biasanya otak nggak bisa mikir kalau lapar.
-  =======
-  testing dari 3 bocah iseng
-  rewer
-  >>>>>>> main
