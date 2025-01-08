@@ -1,3 +1,13 @@
+<?php
+// Database connection
+include "koneksi.php";
+
+// SQL query to fetch data
+$sql = "SELECT * FROM data_keuangan";
+$result = $conn->query($sql);
+
+// Start of HTML content
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -41,23 +51,23 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>1</td>
-                <td>2023-10-01</td>
-                <td>Pendapatan Harian</td>
-                <td>Rp 500,000</td>
-                <td>Rp 0</td>
-                <td>Rp 500,000</td>
-            </tr>
-            <tr>
-                <td>2</td>
-                <td>2023-10-02</td>
-                <td>Pembelian Deterjen</td>
-                <td>Rp 0</td>
-                <td>Rp 100,000</td>
-                <td>Rp 400,000</td>
-            </tr>
-            <!-- Tambahkan baris lainnya sesuai kebutuhan -->
+        <?php
+                if ($result->num_rows > 0) {
+                    // Output data of each row
+                    while ($row = $result->fetch_assoc()) {
+                        echo "<tr>
+                                <td>" . $row["id_laundry"] . "</td>
+                                <td>" . $row["waktu"] . "</td>
+                                <td>" . $row["deskripsi"] . "</td>
+                                <td>" . $row["pemasukan"] . "</td>
+                                <td>" . $row["pengeluaran"] . "</td>
+                                <td>" . $row["saldo"] . "</td>
+                              </tr>";
+                    }
+                } else {
+                    echo "<tr><td colspan='7'>No data available</td></tr>";
+                }
+                ?>
         </tbody>
     </table>
 </body>
